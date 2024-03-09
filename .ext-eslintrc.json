@@ -1,0 +1,60 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "ignorePatterns": ["tests/**", "db/**", "generator/**"],
+  "plugins": ["sonarjs", "unicorn"],
+  "extends": ["google", "eslint:recommended", "plugin:sonarjs/recommended", "plugin:unicorn/recommended"],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "no-console": "error",
+    "max-len": [
+      "error",
+      {
+        "code": 80
+      }
+    ],
+    "require-jsdoc": 0,
+    "func-style": ["error", "declaration"],
+    "sonarjs/no-duplicate-string": "off",
+    "sonarjs/cognitive-complexity": ["error", 15],
+    "unicorn/prefer-module": "off",
+    "unicorn/no-thenable": "off",
+    "unicorn/no-null": "off",
+    "unicorn/filename-case": [
+      "error",
+      {
+        "case": "camelCase"
+      }
+    ],
+    "unicorn/prevent-abbreviations": [
+      "error",
+      {
+        "allowList": {
+          "param": true,
+          "req": true,
+          "res": true
+        }
+      }
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "function"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "export"
+      }
+    ]
+  }
+}

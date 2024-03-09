@@ -1,0 +1,56 @@
+{
+  "env": {
+    "commonjs": true,
+    "es2021": true,
+    "node": true
+  },
+  "ignorePatterns": [
+    "tests/**",
+    "db/**",
+    "generator/**"
+  ],
+  "plugins": [
+    "sonarjs"
+  ],
+  "extends": [
+    "google",
+    "eslint:recommended",
+    "plugin:sonarjs/recommended"
+  ],
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "allowImportExportEverywhere": true
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "max-len": [
+      "error",
+      {
+        "code": 200
+      }
+    ],
+    "require-jsdoc": 0,
+    "func-style": [
+      "error",
+      "declaration"
+    ],
+    "sonarjs/no-duplicate-string": "off",
+    "sonarjs/cognitive-complexity": [
+      "error",
+      15
+    ],
+    "padding-line-between-statements": [
+      "error",
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "function"
+      },
+      {
+        "blankLine": "always",
+        "prev": "*",
+        "next": "export"
+      }
+    ]
+  }
+}
